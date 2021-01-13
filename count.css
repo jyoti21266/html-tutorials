@@ -1,0 +1,20 @@
+ 
+body{
+  background-image: url("images/stars.jpg");
+}
+
+
+ #demo{
+        text-align: center;
+        margin-top: 10rem;
+        font-size: 4rem;
+        color:#fff;
+      }
+      h3{
+        text-align: center;
+        margin-top: 5rem;
+        font-style: sans-serif;
+        font-size: 2rem;
+        color:#fff;
+
+      }
