@@ -1,1 +1,1 @@
-# html-tutorials
+getting started with javascript :D
