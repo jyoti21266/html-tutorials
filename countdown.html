@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>countdown</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		 #demo{
+        text-align: center;
+        margin-top: 10rem;
+        font-size: 4rem;
+      }
+      h3{
+        text-align: center;
+        margin-top: 5rem;
+        font-style: sans-serif;
+        font-size: 2rem;
+
+      }
+}
+	</style>
+</head>
+<body>
+  <h3 id="end">Time Remaining</h3>
+  
+   <p id="demo"></p>
+   
+   <script>
+   	var countdown = new Date("Jan 13,2022 20:39:00").getTime();
+   	var x=setInterval(function(){
+   		var now = new Date().getTime();
+   		var distance=countdown-now;
+   		var days=Math.floor(distance/(1000*60*60*24));
+   		 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("demo").innerHTML=days+"d "+" : "+hours+"h "+" : "+minutes+"m "+" : "+seconds+"s ";
+
+  if(distance<0){
+  	clearInterval(x);
+    document.getElementById("end").innerHTML="HAPPY NEW YEAR!"
+
+  	document.getElementById("demo").innerHTML="CELEBRATIONS";
+  }
+   	},1000);
+
+   </script>
+</body>
+</html>
