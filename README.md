@@ -1,1 +1,1 @@
-getting started with javascript :D
+getting started with html,css and JAVASCRIPT:D
