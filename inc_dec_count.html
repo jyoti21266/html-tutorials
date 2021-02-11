@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>counter</title>
+	<style>
+		body{
+			display:flex;
+	        justify-content: center;
+	        align-items: center;
+            font-family: sans-serif;
+		}
+		.counter{
+			
+			margin-top: 20vh;
+		}
+		h2{
+			font-size: 60px;
+			display:flex;
+	        justify-content: center;
+	        align-items: center;
+
+		}
+		.increase,.decrease,.reset{
+			padding:10px 20px 10px 20px;
+			border:4px solid black;
+			border-radius: 0.5rem;
+			background-color: white;
+			font-weight: bolder;
+			margin:10px 20px 0px 20px;
+			cursor:pointer;
+			transition: 0.4s;
+		}
+		.increase:hover,.decrease:hover,.reset:hover{
+			color:white;
+			background-color: black;
+		}
+		.value{
+			font-size:100px;
+			font-weight: bolder;
+			font-family: sans-serif;
+			display:flex;
+	        justify-content: center;
+	        align-items: center;
+	        margin-bottom: 40px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="counter">
+		<h2>Counter</h2>
+		<span class="value">0</span>
+     <div class="btns-container">
+     	<button class="btn decrease">Decrease</button>
+     	 <button class="btn reset">Reset</button>
+     	  <button class="btn increase">Increase</button>
+     	</div>
+     </div>
+     <script>
+     	let count=0;
+     	const value=document.querySelector('.value');
+     	const btns=document.querySelectorAll('.btn');
+     	//console.log(btns);
+     	btns.forEach(function (btn){
+     		//console.log(btn);
+     		btn.addEventListener("click",function (e){
+     			const curr=e.currentTarget.classList;
+     			//console.log(curr);
+     			if(curr.contains('decrease'))
+     			{
+     				count--;
+     			}
+     			else if(curr.contains('increase'))
+     			{
+     				count++;
+     			}
+     			else{
+     				count=0;
+     			}
+     			if(count>0)
+     			{
+     				value.style.color='green';
+     			}
+     			if(count<0)
+     			{
+     				value.style.color='red';
+     			}
+     			if(count===0)
+     			{
+     				value.style.color='grey';
+     			}
+     			value.textContent=count;
+     		});
+     	})
+     </script>
+
+</body>
+</html>
