@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>quotes</title>
+	<style>
+		body{
+			display:flex;
+			text-align: center;
+			justify-content: center;
+             background-color:#f0ebeb; 
+            font-family: sans-serif;
+		}
+		.container{
+               border-radius: 0.5rem;
+               border:1px solid #aaaaaa;
+               box-shadow: 10px 10px 5px #aaaaaa; 
+               margin:25vh 30px 30px 30px;
+               width: 450px;
+               height: 370px;
+               background-color: white;
+               
+
+		}
+		.heading{
+               font-size: 20px;
+               color:#1dcfdb;
+               margin:0px 10px 0px 10px;
+		}
+		.quote{
+			margin-right: 20px;
+			margin-left: 20px;
+		     font-weight: bolder;
+		}
+		.down
+		{
+		   display: flex;
+		   justify-content: space-between;
+		   margin-top: 25px;
+		}
+		.twitter{
+			margin-left: 20px;
+			cursor:pointer;
+			transition: 0.6s;
+			color:#1ca0b8;
+		}
+
+		#new{
+			margin-right: 20px;
+			border:none;
+			background-color:#1dcfdb;
+			color:white;
+			outline: none;
+			padding:auto;
+			cursor: pointer;
+			border-radius: 0.5rem;
+			transition: 0.6s; 
+		}
+		#new:hover{
+			background-color:#1ca0b8;
+		}
+		.author{
+			color: #a5adad;
+			margin-top:20px;
+		}
+
+		
+	</style>
+	<script src="https://kit.fontawesome.com/24b0f6dee0.js"></script>
+</head>
+<body>
+	<div class="container">
+  <header class="heading"><h1>Random Quote Generator</h1></header>
+  <main>
+  	
+  		
+  		<div class="quote"><h3>“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”</h3></div>
+  			<div class="author">― Marilyn Monroe</div>
+  		
+  		<div class="down">
+  		<span class="twitter" style="font-size:2rem" title="twitter"><i class="fab fa-twitter"></i></span>  		
+  		<button id="new" title="generates new quote">New quote</button>
+  	</div>
+
+  	<script>
+  		const quotes =[{
+  			quote:"“Be yourself; everyone else is already taken.”",
+  			author:"― Oscar Wilde"},
+  			{
+  				quote:"“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”",
+  			author:"-Albert Einstein"},{
+  				quote:"“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”",
+  				author:"― Marilyn Monroe"},
+  				{
+  					quote:"“Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.”",
+  					author:"― Bernard M. Baruch"
+  				},
+  				{
+  					quote:"“You only live once, but if you do it right, once is enough.”",
+  					author:"― Mae West"
+  				},
+  				{
+  					quote:"“Be the change that you wish to see in the world.”",
+  					author:"― Mahatma Gandhi"
+  				},
+  				{
+  					quote:"“I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.”",
+  					author:"― Maya Angelou"
+  				}
+
+  			]
+
+  	const quotebtn=document.getElementById('new');
+  	const quote=document.querySelector('.quote');
+  	const author=document.querySelector('.author');
+  	quotebtn.addEventListener('click',()=>{
+  		let random=Math.floor(Math.random()*quotes.length);
+  		quote.innerHTML=quotes[random].quote;
+  		author.innerHTML=quotes[random].author;
+  	})
+  	</script>
+</body>
+</html>
